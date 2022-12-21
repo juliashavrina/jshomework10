@@ -1,0 +1,36 @@
+.header_block {
+    width: 100%;
+    min-height: 120px;
+    background-color: blue;
+    margin-bottom: 20px;
+    position: absolute;
+}
+
+.heading {
+    position: relative;
+    text-align: center;
+    font-family: 'Unbounded';
+    top: 15px;
+    color: aqua;
+}
+
+.content {
+    position: relative;
+    display: grid;
+    gap: 2px;
+    grid-template-columns: repeat(3, 420px);
+    grid-template-rows: repeat(2, auto);
+    justify-content: center;
+    top: 120px;
+}
+
+.character_card {
+    font-family: 'Unbounded';
+    border: 1px solid blue;
+    margin: 50px;
+    padding: 8px;
+}
+
+.character_card :hover {
+    transform: translateX(10px) rotate(10deg) translateY(5px);
+}
