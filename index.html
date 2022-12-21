@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="header_block">
+
+        <h1 class="heading">Персонажи сериала "Рик и Морти"</h1>
+
+    </div>
+
+    <div class="content"></div>
+
+    <script src="json.js"></script>
+    <script>
+        const dataEl = JSON.parse(dataJson)
+
+        dataEl.forEach(dataEl => {
+            const contenEl = document.querySelector('.content')
+
+            const cardEl = document.createElement('div')
+            cardEl.classList.add('character_card')
+
+            const imageEl = document.createElement('img')
+            imageEl.classList.add('img_character')
+            imageEl.src = dataEl.image
+            const nameEl = document.createElement('h3')
+            nameEl.classList.add('name_character')
+            nameEl.textContent = dataEl.name
+            const statusEl = document.createElement('p')
+            statusEl.classList.add('status_character')
+            statusEl.textContent = dataEl.status
+
+            const speciesEl = document.createElement('p')
+            speciesEl.classList.add('species_character')
+            speciesEl.textContent = dataEl.species
+
+            const genderEl = document.createElement('p')
+            genderEl.classList.add('gender_character')
+            genderEl.textContent = dataEl.gender
+
+            contenEl.appendChild(cardEl)
+            cardEl.appendChild(imageEl)
+            cardEl.appendChild(nameEl)
+            cardEl.appendChild(statusEl)
+            cardEl.appendChild(speciesEl)
+            cardEl.appendChild(genderEl)
+
+        })
+    </script>
+</body>
+
+</html>
